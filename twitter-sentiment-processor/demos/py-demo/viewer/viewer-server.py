@@ -30,7 +30,7 @@ def index():
 
 
 # Subscribe processed-tweets topic
-@app.route('/' + TOPIC_NAME, methods=['POST', 'PUT'])
+@app.route(f'/{TOPIC_NAME}', methods=['POST', 'PUT'])
 def topic_tweets():
     event = request.json
     socketio.emit('message', event['data'], broadcast=True)

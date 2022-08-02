@@ -37,8 +37,7 @@ def binding(request: BindingRequest):
 
 def extract_tweets(payload):
     content = payload['text']
-    ext_text = payload.get('extended_tweet')
-    if ext_text:
+    if ext_text := payload.get('extended_tweet'):
         content = ext_text['full_text']
     user_info = payload['user']
 

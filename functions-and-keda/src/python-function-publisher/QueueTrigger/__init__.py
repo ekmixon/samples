@@ -7,7 +7,7 @@ import azure.functions as func
 dapr_url = "http://localhost:3500/v1.0"
 
 def main(msg: func.QueueMessage):
-    logging.info(f"Python queue-triggered function received a message!")
+    logging.info("Python queue-triggered function received a message!")
     message = msg.get_body().decode('utf-8')
     logging.info(f"Message: {message}")
 
